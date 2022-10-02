@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Belajar Javascript - NIOMIC</title>
+        <style media="screen">
+         .contohstyle {
+           color: red;
+         }
+        </style>
+    </head>
+    <body>
+        <button type="button" onclick="panggil()" name="button">Jalankan</button>
+        <br />
+        <br />
+        <hr />
+        Atribut <b>removeNamedItem()</b> : <br />
+        <input value="Inputan" /> <br />
+        <hr />
+        Atribut <b>setNamedItem()</b> : <br />
+        <i>contoh</i>
+        <hr />
+        Atribut <b>value()</b> :
+        <p id="">contoh</p>
+        <hr />
+
+        <script type="text/javascript">
+            function panggil(){
+                let hapus = document.getElementsByTagName('input')[0]
+                hapus.removeAttribute('value')
+
+                let set = document.getElementsByTagName('i')[0]
+                let buat1 = document.createAttribute("class")
+                buat1.value = "contohstyle"
+                set.attributes.setNamedItem(buat1)
+
+                
+                let isi = document.getElementsByTagName('p')[0]
+                let ubah = isi.attributes.getNamedItem('id')
+                let baru = ubah.value = "button"
+                isi.innerHTML = baru
+            }
+        </script>
+    </body>
+</html>
